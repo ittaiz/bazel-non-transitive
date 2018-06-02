@@ -3,6 +3,7 @@ java_library(
 	srcs = ["UsesCanonical.java"],
 	deps = ["//3rdparty/some_lib"]
 )
+#without exclude it's non deterministic what you'll get in runtime for `A.say`
 java_library(
 	name = "uses_new_ver",
 	srcs = ["WantsToUseNewVer.java"],
