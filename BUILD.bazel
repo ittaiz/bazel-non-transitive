@@ -1,0 +1,11 @@
+java_library(
+	name = "uses_canonical_ver",
+	srcs = ["UsesCanonical.java"],
+	deps = ["//3rdparty/some_lib"]
+)
+java_library(
+	name = "uses_new_ver",
+	srcs = ["WantsToUseNewVer.java"],
+	deps = ["//3rdparty/some_lib/new_ver",":uses_canonical_ver"],
+	#exclude = ["//3rdparty/some_lib"]
+)
